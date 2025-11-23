@@ -196,22 +196,6 @@ Analytics Engine + Reports
 
 ## 📊 Screenshots
 
-> Add your screenshots here:
-
-```
-./src/assets/images/Signin.png  
-./src/assets/images/super-admin.png  
-./src/assets/images/store-admin.png  
-./src/assets/images/branch-manager.png  
-./src/assets/images/cashier.png  
-```
-
-Use Markdown:
-
-```md
-![POS Terminal](./src/assets/images/pos-terminal.png)
-```
-
 <hr />
 
 ## 🚀 Deployment
