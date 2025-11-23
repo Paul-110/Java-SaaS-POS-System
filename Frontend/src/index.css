@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --radius: 0.65rem;
+  --background: #061412;
+  --foreground: rgba(255,255,255,0.96);
+  --card: rgba(15,30,26,0.28);
+  --card-foreground: rgba(255,255,255,0.96);
+  --popover: rgba(15,30,26,0.28);
+  --popover-foreground: rgba(255,255,255,0.96);
+  --primary: #1de9b6;
+  --primary-foreground: rgba(0,0,0,0.9);
+  --secondary: rgba(255,255,255,0.06);
+  --secondary-foreground: rgba(255,255,255,0.96);
+  --muted: rgba(255,255,255,0.6);
+  --muted-foreground: rgba(255,255,255,0.68);
+  --accent: #1de9b6;
+  --accent-foreground: rgba(0,0,0,0.9);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255,255,255,0.04);
+  --input: rgba(255,255,255,0.03);
+  --ring: #1de9b6;
+  
+  --bg-color-dark: #061412; /* deep near-black green */
+  --bg-grad-1: rgba(10,60,50,0.95);
+  --bg-grad-2: rgba(8,30,28,0.95);
+  --glass-fill: rgba(15,30,26,0.28); /* glass panels */
+  --glass-border: rgba(255,255,255,0.04);
+  --accent: #1de9b6; /* bright mint/green accent */
+  --muted: rgba(255,255,255,0.6);
+  --text-primary: rgba(255,255,255,0.96);
+  --text-secondary: rgba(255,255,255,0.68);
+  --btn-bg: rgba(255,255,255,0.06);
+  --btn-border: rgba(255,255,255,0.08);
+  --glass-blur: 12px;
+}
+
+#formless-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(800px circle at var(--mx,50%) var(--my,40%), var(--bg-grad-1), transparent 25%),
+              radial-gradient(1200px circle at calc(var(--mx,50%) + 30%) calc(var(--my,40%) + 10%), var(--bg-grad-2), transparent 30%),
+              linear-gradient(180deg, var(--bg-color-dark), rgba(0,0,0,0.35));
+  backdrop-filter: blur(8px);
+  transition: background-position 0.2s linear;
+  will-change: background-position, transform;
+  mix-blend-mode: screen; /* or try overlay/multiply to match formless */
+  animation: bg-drift 20s linear infinite;
+}
+
+@keyframes bg-drift {
+  0% { transform: translate3d(0,0,0) scale(1.00); }
+  50% { transform: translate3d(-8px, 6px, 0) scale(1.02); }
+  100% { transform: translate3d(0,0,0) scale(1.00); }
+}
+
+.glass-panel {
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 6px 24px rgba(2,10,8,0.5);
+  border-radius: 14px;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--btn-border);
+  color: var(--text-primary);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  transition: transform 160ms cubic-bezier(.2,.9,.3,1), background 160ms;
+  backdrop-filter: blur(6px);
+}
+.btn-ghost:hover {
+  transform: translateY(-3px) scale(1.01);
+  background: rgba(255,255,255,0.04);
+}
+.btn-solid {
+  background: linear-gradient(90deg, var(--accent), #00d1a6);
+  color: rgba(0,0,0,0.9);
+  border-radius: 12px;
+  padding: 0.7rem 1.25rem;
+  box-shadow: 0 6px 22px rgba(0,210,166,0.12);
+}
+
+input, textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text-primary);
+}
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 6px rgba(29,233,182,0.08);
+  outline: none;
+}
+
+@layer base {
+  * {
+    @apply  border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  /* Custom Scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    @apply w-[10px];
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-black/20;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-[10px] border-[2px] border-transparent bg-white/10 bg-clip-content;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-emerald-500/70;
+  }
+}
+
+.storeName {
+ font-family: "Winky Rough", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
