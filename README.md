@@ -87,7 +87,7 @@ Before running the project:
 ### 1. **Clone the repository**
 
 ```bash
-git clone [https://github.com/Paul-110/Java-SaaS-POS-System.git]
+git clone https://github.com/Paul-110/Java-SaaS-POS-System.git
 cd Java-SaaS-POS-System
 ```
 
