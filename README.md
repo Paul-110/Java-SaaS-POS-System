@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/sp.png" width="100" alt="POS Pro System Logo" />
+  <img src="Frontend/public/sp.png" width="100" alt="POS Pro System Logo" />
   <h1>🛒 POS Pro System</h1>
   <p>
     A modern, cloud-powered Point-of-Sale (POS) System built for real businesses.  
@@ -15,7 +15,7 @@
 
 <br />
 
-![POS Pro System Cover Image](public/pospro.png)
+![POS Pro System Cover Image](Frontend/public/pospro.png)
 
 <hr />
 
